@@ -1,0 +1,129 @@
+.menu {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-content: center;
+    gap: 0 33px; }
+
+.menu-item {
+    grid-column: 1/4;
+}
+
+.menu-item:nth-child(2) {
+    grid-column: 1/2;
+}
+
+.menu-item:nth-child(3) {
+    grid-column: 2/3;
+}
+
+.menu-item:nth-child(4) {
+    grid-column: 3/4;
+}
+
+.banner {
+    display: grid;
+    gap: 1rem;
+}
+
+.banner img:nth-child(1) {
+    grid-column: 1/3;
+}
+
+.banner img:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+.events-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto repeat(2, 1fr) auto;
+    grid-template-areas: 
+        "image image"
+        "name name"
+        "date date"
+        "local button";
+}
+
+.events-item img {
+    grid-area: image;
+}
+
+.events-item h3 {
+    grid-area: name;
+    align-self: center;
+}
+
+.events-item h4 {
+    grid-area: date;
+}
+
+.events-item h5 {
+    grid-area: local;
+    align-self: end;
+}
+
+.events-item button {
+    grid-area: button;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+}
+
+.schedule-item img {
+    grid-column: 1/3;
+}
+
+@media (min-width: 720px) {
+
+    .banner {
+        grid-template-columns: calc(50% - 0.75rem) auto auto;
+        column-gap: 1.5rem;
+    }
+
+    .banner img:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+    
+    .banner img:nth-child(4) {
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+}
+
+@media (min-width: 1440px) {
+    .categories {
+        display: grid;
+        grid-template-areas:
+            "title title"
+            "list highlights"
+            "list image";
+        row-gap: 1rem;
+        column-gap: 1.5rem;
+        grid-template-columns: calc(50% - 0.75rem);
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .categories-title {
+        grid-area: title;
+    }
+    
+    .categories-list {
+        grid-area: list;
+     }
+    
+    .categories-highlights {
+        grid-area: highlights;
+    }
+    
+    .categories-image {
+        grid-area: image;
+    }
+    
+}
